@@ -22,7 +22,8 @@ Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 " markdown即时预览
 Plugin 'suan/vim-instant-markdown'
-
+" 执行外部命令
+Plugin 'skywind3000/asyncrun.vim'
 call vundle#end()
 filetype plugin indent on
 
@@ -60,6 +61,9 @@ set ruler
 set statusline=%F%m%r%h%w%=\ [ft=%Y]\ %{\"[fenc=\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\"+\":\"\").\"]\"}\ [ff=%{&ff}]\ [asc=%03.3b]\ [hex=%02.2B]\ [pos=%04l,%04v][%p%%]\ [len=%L]
 " 当文件在外部被改变时，vim自动更新载入
 set autoread
+" 设置当前编辑的文件所在的路径为工作路径
+set autochdir
+
 " ================字体，编码配置==============
 " encoding=utf-8 在windows下会产生菜单栏和右键菜单栏的乱码
 " set encoding=utf-8
@@ -70,6 +74,8 @@ set fileencodings=utf-8,chinese,latin-1
 
 if has("win32")
     set guifont=Consolas:h14:cANSI
+    " 不要图形按钮
+    set go=
 else
     set guifont=YaHei\ Consolas\ Hybrid\ 11.5
 endif
@@ -89,23 +95,23 @@ set shiftwidth=4
 " 让 vim 把连续数量的空格视为一个制表符
 set softtabstop=4
 
+" 共享剪切板,更多内容参考, :help clipboard
+" 在windows 也可以使用万能的解决方法:
+" 复制: ctrl+insert
+" 粘贴：shift+insert
+set clipboard+=unnamed
+
 source $HOME/markdown.vim
 
 
 " runtime! ftplugin/man.vim
 " 显示括号配对情况
 " set showmatch
-" 设置当前编辑的文件所在的路径为工作路径
-" set autochdir
 " 下面两个配置好像没用
 " autocmd InsertLeave * se nocul " 用浅色高亮当前行
 " autocmd InsertEnter * se cul   " 用显色高亮当前行
 " 开启模式显示
 " set showmode
-" 不要图形按钮
-" set go=
-" 设置当前编辑的文件所在的路径为工作路径
-" set autochdir
 " 开启自动换行
 " set wrap
 
