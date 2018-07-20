@@ -103,6 +103,11 @@ set clipboard+=unnamed
 
 source $HOME/markdown.vim
 
+let mapleader=","
+" html 单行注释
+nnoremap <leader>/ ^i<!--<Space><Esc>$a<Space>--><Esc>
+" 多行缩进
+vnoremap <leader><tab> <S-i><tab><Esc>
 
 " runtime! ftplugin/man.vim
 " 显示括号配对情况
