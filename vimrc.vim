@@ -102,12 +102,16 @@ set softtabstop=4
 set clipboard+=unnamed
 
 source $HOME/markdown.vim
+source $HOME/.vim_autoPair
 
 let mapleader=","
 " html 单行注释
 nnoremap <leader>/ ^i<!--<Space><Esc>$a<Space>--><Esc>
 " 多行缩进
 vnoremap <leader><tab> <S-i><tab><Esc>
+
+" 保存html文件时自动格式化
+autocmd BufWritePre *.html :normal gg=G
 
 " runtime! ftplugin/man.vim
 " 显示括号配对情况
