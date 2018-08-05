@@ -101,10 +101,12 @@ set softtabstop=4
 " 粘贴：shift+insert
 set clipboard+=unnamed
 
-source $HOME/markdown.vim
-source $HOME/.vim_autoPair
-
 let mapleader=","
+
+source $HOME/.vim_markdown
+source $HOME/.vim_autoPair
+source $HOME/.translate
+
 " html 单行注释
 nnoremap <leader>/ ^i<!--<Space><Esc>$a<Space>--><Esc>
 " 多行缩进
@@ -128,4 +130,5 @@ autocmd BufWritePre *.html :normal gg=G
 " Plugin 'valloric/youcompleteme'
 " Plugin 'lovekun/lovekun-vimplugin'
 " Plugin 'file:///$HOME/.vim/bundle/lovekun-vimplugin'
+
 
