@@ -1,10 +1,29 @@
-# vim_setting
-## 版本号规则
-v 1(主版本号).0(功能更新版本号).0(bug修复版本号).0(平台号).0(功能号).xx(版本类型)
+# 概述
+vim_setting 提供了一套 Vim 配置和插件的整合方案。希望以最精简的配置，最少的插件依赖，提供一套快速部署 Vim 工作环境，优化 Vim 使用体验。
 
-主版本号: 比较大的更新
-功能更新版本号: 
-bug修复版本号: 
-平台号: 0-通用版本,1-windows, 2-macOSX, 3-linux
-功能号: 分无插件版本(0)和有插件版本(1)
-版本类型: beta（测试版本)， rc(正式发布版本)
+目前，Vim_setting 提供了以下功能:
+
+1. 插件管理(Vundle)
+2. 自动格式化代码(vim-autoformat)
+3. tag列表(tagbar)
+4. 目录显示(nerdtree)
+5. markdown语法高亮(vim-markdown)
+6. 执行外部命令(asyncrun)
+7. 状态栏显示优化
+8. html 单行手动快速注释
+9. 手动多行缩进
+10. html保存时自动格式化
+11. 自动补全成对字符
+12. 英译汉翻译
+
+# 安装教程
+1. 参考 [vundle](https://github.com/VundleVim/Vundle.vim) 的部署，正确安装插件管理器
+2. 将 `vimrc.vim`, `autoPair.vim`, `markdown.vim`, `translate.vim` 复制到本地用户根目录，并将 `autoPair.vim`, `markdown.vim`, `translate.vim` 重命名为 `.autoPair`, `.markdown`, `.translate`,windows下将 `vimrc.vim` 重命名为 `_vimrc`, macos或Linux下将 `vimrc.vim` 重命名为 `.vimrc`
+3. 进入 Vim, 执行插件管理启动命令`PluginInstall`, 安装插件
+
+# 使用说明
+1. 该配置默认使用 `,` 作为快捷键前缀
+2. 英译汉需要 vim 支持 python，使用 `echo has(python)` 来查看你的 Vim 是否支持 python. 英译汉插件使用 `python 2.7` 编写，需要系统安装 python.
+
+# 待办事项
+- [ ] 实现Vim在线聊天，聊天室，支持团队分析代码段 
