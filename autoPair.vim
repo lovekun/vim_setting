@@ -8,7 +8,7 @@ inoremap < <><Esc>i
 inoremap " <c-r>=CloseQuote('"')<CR>
 inoremap ' <c-r>=CloseQuote("'")<CR>
 
-function CloseQuote(quote)
+function! CloseQuote(quote)
     echom a:quote
     let le = getline('.')
     let col = col('.')
