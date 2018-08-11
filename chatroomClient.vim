@@ -1,11 +1,7 @@
 command! -nargs=0 ChatRoom :call WindowOpen()
-
 command! -nargs=0 CreateServer :call CreateServer()
-
 command! -nargs=1 TestServer :call TestServer(<f-args>)
-
 command! -nargs=0 CloseServer :call CloseServer()
-
 command! -nargs=1 Connect2Server :call Connect2Server(<f-args>)
 
 "
@@ -166,22 +162,18 @@ import socket
 import vim
 import threading
 
-def conn2Server():
-    print vim.eval("a:msg")
+def conn2Server(data):
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.connect(('127.0.0.1', 8989))
     print s.recv(1024)
-    s.send('hello')
+    s.send(data)
     print s.recv(1024)
     s.send('exit')
     s.close()
+    print data
 
-
-# print vim.eval("a:msg")
-threading.Thread(target=conn2Server).start()
-msg0 = vim.eval("a:msg")
-# t0 = threading.Thread(target=conn2Server, args=(msg0))
-# t0.start()
+t = threading.Thread(target=conn2Server, args=(vim.eval("a:msg"),))
+t.start()
 
 EOF
 endfunc
@@ -194,11 +186,16 @@ endfunc
 " 执行job
 func! GetDate()
     echom "aaa"
-    echom "bbb"
     "call job_start(['/bin/bash', '-c', 'sleep 5s; date'], {'callback': 'Handler'})
     "call job_start('ping -n 3 127.0.0.1', {'callback': 'Handler'})
     call job_start('python test.py', {'callback': 'Handler'})
 endfunc
 
 nnoremap <F3> :call GetDate()<cr>
+
+func! MyHandler(timer)
+	echom 'Handler called'
+    edit!
+endfunc
+""let timer = timer_start(5000, 'MyHandler', {'repeat': 200})
 
