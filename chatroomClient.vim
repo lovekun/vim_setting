@@ -33,6 +33,8 @@ let g:selection = 0
 let g:list = []
 let g:start = 0
 function! WindowOpen()
+    set nolazyredraw
+    let &cmdheight = 6
     try
         let l:done = 0
         while !l:done
@@ -47,8 +49,7 @@ function! WindowOpen()
 endfunc
 
 function! FillMenu()
-    ""set nolazyredraw
-    let &cmdheight = 6
+    set nolazyredraw
     echo 'config chat room'
     echo '========================'
     let l:menuItem = ['(p)connect to public room','(l)connect to local room','(c)create local room']
@@ -65,9 +66,9 @@ function! HandleKeyPress(key)
     if a:key == nr2char(27)
         return 1
     elseif a:key == 'j'
-        g:selection += 1
+        let g:selection += 1
     elseif a:key == 'k'
-        echo 'k'
+        let g:selection -= 1
     endif
     return 0
 endfunc
