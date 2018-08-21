@@ -21,7 +21,7 @@ Plugin 'godlygeek/tabular'
 " markdown语法高亮
 Plugin 'plasticboy/vim-markdown'
 " markdown即时预览
-Plugin 'suan/vim-instant-markdown'
+" Plugin 'suan/vim-instant-markdown'
 " 执行外部命令
 Plugin 'skywind3000/asyncrun.vim'
 call vundle#end()
@@ -76,8 +76,17 @@ if has("win32")
     set guifont=Consolas:h14:cANSI
     " 不要图形按钮
     set go=
+    source E:/personal/git/vim_setting/markdown.vim
+    source E:/personal/git/vim_setting/autoPair.vim
+    source E:/personal/git/vim_setting/translate.vim
+    source E:/personal/git/vim_setting/previewMarkdown.vim
+
 else
     set guifont=YaHei\ Consolas\ Hybrid\ 11.5
+    source $HOME/Documents/git/vim_setting/markdown.vim
+    source $HOME/Documents/git/vim_setting/autoPair.vim
+    source $HOME/Documents/git/vim_setting/translate.vim
+    source $HOME/Documents/git/vim_setting/previewMarkdown.vim
 endif
 
 " set guifont=Courier_New:h14:cANSI  " 设置字体和大小
@@ -103,10 +112,6 @@ set clipboard+=unnamed
 
 let mapleader=","
 
-source $HOME/.vim_markdown
-source $HOME/.vim_autoPair
-source $HOME/.translate
-source $HOME/Documents/git/vim_setting/previewMarkdown.vim
 
 " html 单行注释
 nnoremap <leader>/ ^i<!--<Space><Esc>$a<Space>--><Esc>

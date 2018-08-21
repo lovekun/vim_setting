@@ -35,6 +35,8 @@ router.get('/', function(req, res, next) {
 /* vim 通过post请求，将路径传给服务端，服务端将路径保存 */
 router.post('/', function(req, res, next) {
     url = req.body.url;
+    console.log(url.decode('utf-8'))
+    var encoded = encodeURI(url);
     fs.readFile(url, function(err, data) {
         if (err) throw err;
         var markdownContent = data.toString();
@@ -42,7 +44,6 @@ router.post('/', function(req, res, next) {
         res.send(htmlContent);
     });
 });
-
 
 
 module.exports = router;
