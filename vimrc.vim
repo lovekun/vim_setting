@@ -103,9 +103,9 @@ set clipboard+=unnamed
 
 let mapleader=","
 
-source $HOME/.vim_markdown
-source $HOME/.vim_autoPair
-source $HOME/.translate
+source E:/personal/Github/vim_setting/markdown.vim
+source E:/personal/Github/vim_setting/autoPair.vim
+source E:/personal/Github/vim_setting/translate.vim
 
 " html 单行注释
 nnoremap <leader>/ ^i<!--<Space><Esc>$a<Space>--><Esc>
