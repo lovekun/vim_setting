@@ -21,7 +21,7 @@ Plugin 'godlygeek/tabular'
 " markdown语法高亮
 Plugin 'plasticboy/vim-markdown'
 " markdown即时预览
-Plugin 'suan/vim-instant-markdown'
+" Plugin 'suan/vim-instant-markdown'
 " 执行外部命令
 Plugin 'skywind3000/asyncrun.vim'
 call vundle#end()
