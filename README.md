@@ -18,8 +18,9 @@ vim_setting 提供了一套 Vim 配置和插件的整合方案。希望以最精
 
 # 安装教程
 1. 参考 [vundle](https://github.com/VundleVim/Vundle.vim) 的部署，正确安装插件管理器
-2. 将 `vimrc.vim`, `autoPair.vim`, `markdown.vim`, `translate.vim` 复制到本地用户根目录，并将 `autoPair.vim`, `markdown.vim`, `translate.vim` 重命名为 `.autoPair`, `.markdown`, `.translate`,windows下将 `vimrc.vim` 重命名为 `_vimrc`, macos或Linux下将 `vimrc.vim` 重命名为 `.vimrc`
-3. 进入 Vim, 执行插件管理启动命令`PluginInstall`, 安装插件
+2. 如果用户目录下不存在 `.vimrc`(windows下为 `_vimcr`),则新建该文件
+3. 在 `.vimrc`(`_vimrc`) 下新建引入项目中的 `vimrc.vim`
+4. 进入 Vim, 执行插件管理启动命令`PluginInstall`, 安装插件
 
 # 使用说明
 1. 该配置默认使用 `,` 作为快捷键前缀
@@ -27,3 +28,4 @@ vim_setting 提供了一套 Vim 配置和插件的整合方案。希望以最精
 
 # 待办事项
 - [ ] 实现Vim在线聊天，聊天室，支持团队分析代码段 
+- [ ] 预览markdown，开启express服务，但是请求时，如果文件名是中文，会出现乱码。

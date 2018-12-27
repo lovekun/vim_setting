@@ -40,7 +40,7 @@ set backspace=indent,eol,start
 " 命令记忆最大长度
 set history=50
 " 开启行号显示
-set number 
+set number
 " 高亮显示当前行/列
 set cursorline
 " set cursorcolumn
@@ -50,7 +50,7 @@ set ignorecase
 set hlsearch
 " 输入搜索的关键字时同时高亮显示
 set incsearch
-" 文件搜索路径 
+" 文件搜索路径
 set path+=**
 " 允许在未保存时切换缓冲区
 set hidden
@@ -76,8 +76,17 @@ if has("win32")
     set guifont=Consolas:h14:cANSI
     " 不要图形按钮
     set go=
+    source E:/personal/git/vim_setting/markdown.vim
+    source E:/personal/git/vim_setting/autoPair.vim
+    source E:/personal/git/vim_setting/translate.vim
+    source E:/personal/git/vim_setting/previewMarkdown.vim
+
 else
     set guifont=YaHei\ Consolas\ Hybrid\ 11.5
+    source $HOME/Documents/git/vim_setting/markdown.vim
+    source $HOME/Documents/git/vim_setting/autoPair.vim
+    source $HOME/Documents/git/vim_setting/translate.vim
+    source $HOME/Documents/git/vim_setting/previewMarkdown.vim
 endif
 
 " set guifont=Courier_New:h14:cANSI  " 设置字体和大小
@@ -107,6 +116,7 @@ source E:/personal/Github/vim_setting/markdown.vim
 source E:/personal/Github/vim_setting/autoPair.vim
 source E:/personal/Github/vim_setting/translate.vim
 
+
 " html 单行注释
 nnoremap <leader>/ ^i<!--<Space><Esc>$a<Space>--><Esc>
 " 多行缩进
@@ -130,5 +140,3 @@ autocmd BufWritePre *.html :normal gg=G
 " Plugin 'valloric/youcompleteme'
 " Plugin 'lovekun/lovekun-vimplugin'
 " Plugin 'file:///$HOME/.vim/bundle/lovekun-vimplugin'
-
-
