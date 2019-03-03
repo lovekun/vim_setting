@@ -83,10 +83,10 @@ if has("win32")
 
 else
     set guifont=YaHei\ Consolas\ Hybrid\ 11.5
-    source $HOME/Documents/git/vim_setting/markdown.vim
-    source $HOME/Documents/git/vim_setting/autoPair.vim
-    source $HOME/Documents/git/vim_setting/translate.vim
-    source $HOME/Documents/git/vim_setting/previewMarkdown.vim
+    source $HOME/Documents/GitHub/vim_setting/markdown.vim
+    source $HOME/Documents/GitHub/vim_setting/autoPair.vim
+    source $HOME/Documents/GitHub/vim_setting/translate.vim
+    source $HOME/Documents/GitHub/vim_setting/previewMarkdown.vim
 endif
 
 " set guifont=Courier_New:h14:cANSI  " 设置字体和大小
