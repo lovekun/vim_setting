@@ -80,8 +80,9 @@ if has("win32")
     source E:/personal/git/vim_setting/autoPair.vim
     source E:/personal/git/vim_setting/translate.vim
     source E:/personal/git/vim_setting/previewMarkdown.vim
-
-else
+elseif has("mac")
+        set guioptions-=r
+        set guioptions-=L
     set guifont=YaHei\ Consolas\ Hybrid\ 11.5
     source $HOME/Documents/GitHub/vim_setting/markdown.vim
     source $HOME/Documents/GitHub/vim_setting/autoPair.vim
@@ -99,11 +100,7 @@ filetype indent on
 set expandtab
 " 设置编辑时制表符占用空格数
 set tabstop=4
-" 设置格式化时制表符占用空格数
-set shiftwidth=4
-" 让 vim 把连续数量的空格视为一个制表符
-set softtabstop=4
-
+" 设置格式化时制表符占用空格数 set shiftwidth=4 " 让 vim 把连续数量的空格视为一个制表符 set softtabstop=4 
 " 共享剪切板,更多内容参考, :help clipboard
 " 在windows 也可以使用万能的解决方法:
 " 复制: ctrl+insert
@@ -111,11 +108,6 @@ set softtabstop=4
 set clipboard+=unnamed
 
 let mapleader=","
-
-source E:/personal/Github/vim_setting/markdown.vim
-source E:/personal/Github/vim_setting/autoPair.vim
-source E:/personal/Github/vim_setting/translate.vim
-
 
 " html 单行注释
 nnoremap <leader>/ ^i<!--<Space><Esc>$a<Space>--><Esc>
