@@ -24,6 +24,8 @@ Plugin 'plasticboy/vim-markdown'
 " Plugin 'suan/vim-instant-markdown'
 " 执行外部命令
 Plugin 'skywind3000/asyncrun.vim'
+" 全局搜索
+Plugin 'Yggdroot/LeaderF'
 call vundle#end()
 filetype plugin indent on
 
